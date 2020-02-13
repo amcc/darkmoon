@@ -45,7 +45,7 @@ function draw() {
   translate(0, 0, zTranslation);
   rotateY(millis() / rotationSpeed);
   specularMaterial(250);
-  sphere(280, 24, 24);
+  sphere(400, 24, 24);
   pop();
 }
 
