@@ -20,7 +20,7 @@ function setup() {
 
 function draw() {
   background(255);
-  orbitControl();
+  orbitControl(1,1,0);
 
   // create the starfield sphere
   push()
@@ -42,7 +42,7 @@ function draw() {
   translate(0, 0, width / 4);
   rotateY(millis() / rotationSpeed);
   specularMaterial(250);
-  sphere(100, 24, 24);
+  sphere(200, 24, 24);
   pop();
 }
 
