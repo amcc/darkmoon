@@ -12,10 +12,12 @@ The starfield is from NASA
 */
 
 let rotationSpeed = 40000;
+let zTranslation;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   img = loadImage('assets/nasastar.jpg');
+  zTranslation = 100
 }
 
 function draw() {
@@ -28,9 +30,10 @@ function draw() {
   noStroke();
   // stroke(0,255,0);
   texture(img);
-  translate(0, 0, width / 4);
+  translate(0, 0, zTranslation);
   rotateY(millis() / rotationSpeed);
-  sphere(700);
+  // choose width or height, whichever is greater for size of sphere
+  sphere(width > height ? width : height);
   pop();
 
   // create the dark sphere
@@ -39,7 +42,7 @@ function draw() {
   fill(0);
   noStroke();
   // stroke(0,255,0);
-  translate(0, 0, width / 4);
+  translate(0, 0, zTranslation);
   rotateY(millis() / rotationSpeed);
   specularMaterial(250);
   sphere(150, 24, 24);
