@@ -13,16 +13,20 @@ The starfield is from NASA
 
 let rotationSpeed = 40000;
 let zTranslation;
+let starSphereSize;
+let moonSize;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   img = loadImage('assets/nasastar.jpg');
-  zTranslation = 100
+  zTranslation = 100;
 }
 
 function draw() {
+  starSphereSize = width > height ? width : height
+  moonSize = width < height ? width : height;
   background(255);
-  orbitControl(1,1,0);
+  orbitControl(1, 1, 0);
 
   // create the starfield sphere
   push()
@@ -33,7 +37,7 @@ function draw() {
   translate(0, 0, zTranslation);
   rotateY(millis() / rotationSpeed);
   // choose width or height, whichever is greater for size of sphere
-  sphere(width > height ? width : height);
+  sphere(starSphereSize);
   pop();
 
   // create the dark sphere
@@ -45,7 +49,7 @@ function draw() {
   translate(0, 0, zTranslation);
   rotateY(millis() / rotationSpeed);
   specularMaterial(250);
-  sphere(400, 24, 24);
+  sphere(moonSize / 2.9, 24, 24);
   pop();
 }
 
