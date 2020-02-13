@@ -7,40 +7,47 @@ Some helpful pages if you want to understand whats going on:
 https://p5js.org/examples/form-3d-primitives.html
 https://p5js.org/examples/3d-multiple-lights.html
 https://p5js.org/examples/3d-textures.html
+
+The starfield is from NASA
 */
 
 let rotationSpeed = 40000;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-  img = loadImage('assets/nasastar-med.jpg');
+  img = loadImage('assets/nasastar.jpg');
 }
 
 function draw() {
   background(255);
-  
+  orbitControl();
+
   // create the starfield sphere
   push()
-  
+
   noStroke();
   // stroke(0,255,0);
   texture(img);
-  translate(0, 0, height/2);
+  translate(0, 0, width / 4);
   rotateY(millis() / rotationSpeed);
-  sphere(300);
+  sphere(700);
   pop();
-  
+
   // create the dark sphere
   push();
   pointLight(10, 10, 10, 10, -40, 0);
   fill(0);
   noStroke();
   // stroke(0,255,0);
-  translate(0, 0, height/4);
+  translate(0, 0, width / 4);
   rotateY(millis() / rotationSpeed);
   specularMaterial(250);
-  sphere(200, 24,24);
+  sphere(100, 24, 24);
   pop();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 /*
