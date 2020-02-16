@@ -42,7 +42,7 @@ function draw() {
 
   // create the dark sphere
   push();
-  pointLight(10, 10, 10, 10, -40, 0);
+  pointLight(20, 20, 20, 10, -40, 0);
   fill(0);
   noStroke();
   // stroke(0,255,0);
