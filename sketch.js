@@ -26,7 +26,7 @@ function draw() {
   starSphereSize = width > height ? width : height
   moonSize = width < height ? width : height;
   background(255);
-  orbitControl(1, 1, 0);
+  orbitControl(1, 1, 0.01);
 
   // create the starfield sphere
   push()
@@ -37,7 +37,7 @@ function draw() {
   translate(0, 0, zTranslation);
   rotateY(millis() / rotationSpeed);
   // choose width or height, whichever is greater for size of sphere
-  sphere(starSphereSize);
+  sphere(starSphereSize*1.5);
   pop();
 
   // create the dark sphere
@@ -49,7 +49,7 @@ function draw() {
   translate(0, 0, zTranslation);
   rotateY(millis() / rotationSpeed);
   specularMaterial(250);
-  sphere(moonSize / 2.9, 24, 24);
+  sphere(moonSize / 3.9, 24, 24);
   pop();
 }
 
