@@ -11,8 +11,13 @@ canvas {
   display: block;
 }
 #loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
   padding: 2rem;
   font-size: 1rem;
+  color: gray;
 }
 #info {
   display: none;

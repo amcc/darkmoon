@@ -18,9 +18,11 @@ let moonSize;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-  img = loadImage("assets/nasastar.jpg");
+  img = loadImage("assets/nasastar.jpg", imageLoaded());
   zTranslation = 100;
+}
 
+function imageLoaded() {
   // remove the loading text
   let loading = select("#loading");
   loading.remove();
