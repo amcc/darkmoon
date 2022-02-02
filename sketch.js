@@ -20,6 +20,10 @@ function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   img = loadImage("assets/nasastar.jpg");
   zTranslation = 100;
+
+  // remove the loading text
+  let loading = select("#loading");
+  loading.remove();
 }
 
 function draw() {
