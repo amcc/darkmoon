@@ -18,26 +18,26 @@ let moonSize;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-  img = loadImage('assets/nasastar.jpg');
+  img = loadImage("assets/nasastar.jpg");
   zTranslation = 100;
 }
 
 function draw() {
-  starSphereSize = width > height ? width : height
+  starSphereSize = width > height ? width : height;
   moonSize = width < height ? width : height;
   background(255);
   orbitControl(1, 1, 0.01);
 
   // create the starfield sphere
-  push()
+  push();
 
   noStroke();
   // stroke(0,255,0);
   texture(img);
   translate(0, 0, zTranslation);
-  rotateY(millis() / rotationSpeed);
+  rotateY(PI + millis() / rotationSpeed);
   // choose width or height, whichever is greater for size of sphere
-  sphere(starSphereSize*1.5);
+  sphere(starSphereSize * 1.5);
   pop();
 
   // create the dark sphere
