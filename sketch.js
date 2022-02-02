@@ -15,10 +15,15 @@ let rotationSpeed = 40000;
 let zTranslation;
 let starSphereSize;
 let moonSize;
+let img;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-  img = loadImage("assets/nasastar.jpg", imageLoaded());
+
+  let starTexture =
+    width > 1000 ? "assets/nasastar.jpg" : "assets/nasastar-small.jpg";
+  console.log(width, starTexture);
+  img = loadImage(starTexture, imageLoaded());
   zTranslation = 100;
 }
 
