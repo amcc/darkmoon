@@ -6,6 +6,7 @@ body {
   font-weight: 200;
   /* cursor: grab; */
   cursor: grab;
+  background-color: #111;
 }
 canvas {
   display: block;
@@ -17,7 +18,7 @@ canvas {
   z-index: 2;
   padding: 2rem;
   font-size: 1rem;
-  color: gray;
+  color: white;
 }
 #info {
   /* display: none; */
