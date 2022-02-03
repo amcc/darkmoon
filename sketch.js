@@ -11,7 +11,7 @@ https://p5js.org/examples/3d-textures.html
 The starfield is from NASA
 */
 
-let rotationSpeed = 40000;
+let rotationSpeed = 70000;
 let zTranslation;
 let starSphereSize;
 let moonSize;
